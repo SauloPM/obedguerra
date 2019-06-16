@@ -51,6 +51,15 @@ function fixNavbar() {
 //     TOP BUTTON     //
 // ────────────────── //
 
+// Smooth Scrolling Links
+$(".smooth-scrolling").click(function (event) {
+    event.preventDefault();
+    var target = $(this).attr("href");
+    $("html, body").animate({ scrollTop: $(target).offset().top }, 800, function () {
+        window.location.hash = target;
+    });
+});
+
 // Top button revealing
 function showTopButton () {
     if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150)
