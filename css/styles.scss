@@ -210,17 +210,17 @@ nav {
       font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 5px;
-      margin-left: 25px;
+      margin-left: 10px;
 
       img {
-        width: 70px;
+        width: 55px;
         height: auto;
       }
 
       h1 {
         display: inline-block;
         color: rgba(0,0,0,.55);
-        font-size: 15px;
+        font-size: 12px;
         font-weight: normal;
         text-transform: lowercase;
         letter-spacing: 0px;
@@ -245,7 +245,7 @@ nav {
         font-size: 11px;
         text-decoration: none;
         padding: 0 8px;
-        margin-right: 25px;
+        margin-right: 10px;
         position: relative;
         height: 100%;
         transition: .5s ease-in-out;
@@ -276,12 +276,14 @@ nav {
 @media (min-width: $mobile) {
   nav .wrapper .brand {
     font-size: 25px;
-  }
-  nav .wrapper .brand {
     margin-left: 25px;
+    img {
+      width: 70px;
+    }
   }
   nav .wrapper .items .item {
     font-size: 14px;
+    margin-right: 25px;
 
     &:before {
       top: 38px;
@@ -381,7 +383,6 @@ nav {
     column-gap: 5px;
 
     .proyecto {
-      border: 1px solid rgba(0,0,0,.1);
       margin: 0 0 5px;
     }
   }
@@ -390,6 +391,10 @@ nav {
 @media (min-width: $tablet) {
   #proyectos {
     columns: 4;
+
+    .proyecto {
+      border: 1px solid rgba(0,0,0,.1);
+    }
   }
 }
 
