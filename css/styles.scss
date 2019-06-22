@@ -1,6 +1,6 @@
 // Colores
 $texto  : rgb(025,025,025);
-$fondo  : rgb(250,245,240);
+$blanco : rgb(255,255,255);
 $primary: rgb(224,035,062);
 
 // Responsive
@@ -13,7 +13,7 @@ $tablet: 768px;
 
 body {
   color: $texto;
-  background: $fondo;
+  background: $blanco;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -34,8 +34,8 @@ p {
 
 // Text selection
 
-::-moz-selection { color: white; background-color: $primary }
-::selection      { color: white; background-color: $primary }
+::-moz-selection { color: $blanco; background-color: $primary }
+::selection      { color: $blanco; background-color: $primary }
 
 ::-webkit-scrollbar {
   width: 0;
@@ -64,7 +64,7 @@ p {
   color: $texto !important;
   text-decoration: none !important;
   white-space: nowrap;
-  background: white;
+  background: $blanco;
   border: 1px solid rgba(25,25,25,.25);
   position: fixed;
   bottom: 25px;
@@ -101,7 +101,7 @@ p {
 */
 
 nav {
-  background: white;
+  background: $blanco;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,7 +180,7 @@ nav {
 
         &:hover  .trazo,
         &.active .trazo {
-          opacity: .85;
+          opacity: 1;
         }
       }
     }
@@ -252,7 +252,7 @@ nav {
     }
 
     .titulo {
-      color: white;
+      color: $blanco;
       font-size: 12px;
       position: absolute;
       bottom: 65px;
@@ -310,6 +310,57 @@ nav {
 
     .proyecto {
       border: 1px solid rgba(0,0,0,.1);
+    }
+  }
+}
+
+// ───────────── //
+//     ABOUT     //
+// ───────────── //
+
+#about {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px auto 0;
+  width: 100%;
+  max-width: 1500px;
+
+  .columna:nth-child(1) {
+    position: relative;
+
+    .selfie {
+      width: 480px;
+      height: auto;
+    }
+
+    .trazo {
+      position: absolute;
+      top: 75px;
+      left: -235px;
+      z-index: -1;
+      width: 1000px;
+      height: auto;
+      transform: rotate(-22deg);
+    }
+  }
+
+  .columna:nth-child(2) {
+
+    h2 {
+      font-size: 200px;
+      font-weight: 900;
+      text-align: right;
+      letter-spacing: -10px;
+      line-height: 175px;
+      margin-top: 45px;
+      margin-bottom: 75px;
+    }
+
+    p {
+      font-size: 25px;
+      text-align: right;
+      line-height: 40px;
+      opacity: .8;
     }
   }
 }
@@ -380,7 +431,7 @@ footer {
 }
 
 footer p {
-  color: $fondo;
+  color: $blanco;
   font-size: 12px;
   font-weight: 200;
   margin: 0;
