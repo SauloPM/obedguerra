@@ -121,6 +121,8 @@ nav {
     height: 100%;
 
     .brand {
+      display: flex;
+      align-items: center;
       font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 5px;
@@ -134,14 +136,14 @@ nav {
       h1 {
         display: inline-block;
         color: rgba(0,0,0,.55);
-        font-size: 12px;
+        font-size: 13px;
         font-weight: normal;
         text-transform: lowercase;
         letter-spacing: 0px;
         margin: 0;
         position: relative;
-        top: 15px;
-        left: -15px;
+        top: 17px;
+        left: -8px;
       }
     }
   
@@ -247,6 +249,7 @@ nav {
 
     img {
       vertical-align: middle;
+      width: 100%;
       max-width: 100%;
     }
 
