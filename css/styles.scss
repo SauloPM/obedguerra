@@ -165,24 +165,22 @@ nav {
         position: relative;
         height: 100%;
         transition: .5s ease-in-out;
-  
-        &.active:before,
-        &:hover:before {
-          width: 100%;
-          opacity: 1;
-        }
-  
-        &:before {
-          content: '';
-          display: block;
-          background: $primary;
+
+        .trazo {
           position: absolute;
-          top: 37px;
-          left: 5px;
-          width: 0;
-          height: 2px;
-          opacity: .75;
+          z-index: -1;
+          height: auto;
+          opacity: 0;
           transition: .5s ease-in-out;
+        }
+
+        &:nth-child(1) .trazo { top: 30px; left : -2px; width: 87px; transform: rotate(-5deg) }
+        &:nth-child(2) .trazo { top: 29px; right:  0px; width: 56px; transform: rotate( 6deg) }
+        &:nth-child(3) .trazo { top: 34px; left: -17px; width: 80px; transform: rotate( 3deg) }
+
+        &:hover  .trazo,
+        &.active .trazo {
+          opacity: .85;
         }
       }
     }
@@ -342,15 +340,6 @@ nav {
     height: 100px;
     cursor: pointer;
 
-    &:last-child {
-      margin: 0;
-    }
-
-    &:hover .icon {
-      font-size: 25px;
-      border-color: $primary;
-    }
-
     .icon {
       display: flex;
       align-items: center;
@@ -361,6 +350,15 @@ nav {
       width: 80px;
       height: 80px;
       transition: .25s ease-in-out;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover .icon {
+      font-size: 30px;
+      border-color: $primary;
     }
   }
 }
