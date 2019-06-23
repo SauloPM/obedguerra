@@ -33,14 +33,13 @@ p {
 }
 
 // Text selection
-
 ::-moz-selection { color: $blanco; background: $primary }
 ::selection      { color: $blanco; background: $primary }
 
+// Scrollbar
 ::-webkit-scrollbar { width: 0 }
 
 // Placeholder
-
 ::placeholder           { color: #c8c8c8; font-weight: normal; transition: .5s }
 :-ms-input-placeholder  { color: #c8c8c8; font-weight: normal; transition: .5s }
 ::-ms-input-placeholder { color: #c8c8c8; font-weight: normal; transition: .5s }
