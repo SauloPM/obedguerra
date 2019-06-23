@@ -1,7 +1,7 @@
 // Colores
 $texto  : rgb(025,025,025);
 $blanco : rgb(255,255,255);
-$primary: rgb(224,035,062);
+$primary: rgb(230,025,065);
 
 // Responsive
 $mobile: 480px;
@@ -34,12 +34,10 @@ p {
 
 // Text selection
 
-::-moz-selection { color: $blanco; background-color: $primary }
-::selection      { color: $blanco; background-color: $primary }
+::-moz-selection { color: $blanco; background: $primary }
+::selection      { color: $blanco; background: $primary }
 
-::-webkit-scrollbar {
-  width: 0;
-}
+::-webkit-scrollbar { width: 0 }
 
 // Placeholder
 
@@ -357,10 +355,10 @@ nav {
     }
 
     p {
+      color: rgba(25,25,25,.75);
       font-size: 25px;
       text-align: right;
       line-height: 40px;
-      opacity: .8;
     }
   }
 }
