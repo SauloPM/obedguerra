@@ -59,8 +59,7 @@ p {
 // Utils
 
 .wrapper {
-  padding-left: 20px;
-  transition: .5s;
+  padding: 50px 50px 0;
 }
 
 .overlay {
@@ -74,108 +73,193 @@ p {
 }
 
 // ────────────── //
-//     NAVBAR     //
+//     TOPBAR     //
 // ────────────── //
 
-#navbar {
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
   padding: 0;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  z-index: 200;
-  width: 20px;
+  right: 0;
+  z-index: 150;
+  width: 100%;
+  height: 50px;
 
-  // Flecha
+  .item {
+    color: $texto;
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 5px;
+    white-space: nowrap;
+    margin-right: 25px;
+    transition: .25s;
 
-  .abrir {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    box-shadow: 0 2px 5px black;
-    width: 100%;
-    height: 100%;
-    transition: .5s;
-    cursor: pointer;
-  }
-
-  .abrir:hover, .cerrar:hover { color: $primary }
-
-  // Items
-
-  .contenido {
-    display: flex;
-    background: white;
-    box-shadow: 0 2px 5px black;
-    position: fixed;
-    left: -300px;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    transition: .75s ease-out;
-    
-    .items {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: column;
-      padding: 50px 20px 0;
-    
-      .logo {
-        margin-bottom: 50px;
-        width: 150px;
-        height: auto;
-      }
-    
-      .item {
-        display: inline-block;
-        color: $texto;
-        font-size: 35px;
-        text-decoration: none;
-        padding: 0 8px;
-        margin-bottom: 15px;
-        position: relative;
-        transform: scale(.45);
-    
-        .trazo {
-          position: absolute;
-          z-index: -1;
-          height: auto;
-          opacity: 0;
-          transition: .5s ease-in;
-        }
-    
-        &:nth-child(2) .trazo { top:  0px; left : -15px; width: 205px; transform: rotate(-5deg) }
-        &:nth-child(3) .trazo { top: -5px; right: -15px; width: 150px; transform: rotate( 6deg) }
-        &:nth-child(4) .trazo { top: 10px; left:  -50px; width: 195px; transform: rotate( 3deg) }
-    
-        &:hover  .trazo,
-        &.active .trazo { opacity: 1 }
-    
-        &:last-child {
-          margin: 0;
-        }
-      }
+    &:last-child {
+      margin: 0;
     }
 
-    .cerrar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      font-weight: bold;
-      position: absolute;
-      top: 0;
-      left: 5px;
-      width: 20px;
-      height: 100%;
-      transition: .5s;
-      cursor: pointer;
+    &.active,
+    &:hover {
+      color: $primary;
     }
   }
 }
+
+// ─────────────── //
+//     SIDEBAR     //
+// ─────────────── //
+
+.sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 150;
+  width: 50px;
+
+  .texto {
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    white-space: nowrap;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  &.left {
+    left: 0;
+
+    .texto {
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  &.right {
+    right: 0;
+
+    .texto {
+      transform: rotateZ(90deg);
+    }
+  }
+}
+
+// ────────────── //
+//     NAVBAR     //
+// ────────────── //
+
+// #navbar {
+//   padding: 0;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   z-index: 200;
+//   width: 20px;
+
+//   // Flecha
+
+//   .abrir {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 30px;
+//     font-weight: bold;
+//     box-shadow: 0 2px 5px black;
+//     width: 100%;
+//     height: 100%;
+//     transition: .5s;
+//     cursor: pointer;
+//   }
+
+//   .abrir:hover, .cerrar:hover { color: $primary }
+
+//   // Items
+
+//   .contenido {
+//     display: flex;
+//     background: white;
+//     box-shadow: 0 2px 5px black;
+//     position: fixed;
+//     left: -300px;
+//     top: 0;
+//     bottom: 0;
+//     height: 100vh;
+//     transition: .75s ease-out;
+    
+//     .items {
+//       display: flex;
+//       align-items: center;
+//       justify-content: flex-start;
+//       flex-direction: column;
+//       padding: 50px 20px 0;
+    
+//       .logo {
+//         margin-bottom: 50px;
+//         width: 150px;
+//         height: auto;
+//       }
+    
+//       .item {
+//         display: inline-block;
+//         color: $texto;
+//         font-size: 35px;
+//         text-decoration: none;
+//         padding: 0 8px;
+//         margin-bottom: 15px;
+//         position: relative;
+//         transform: scale(.45);
+    
+//         .trazo {
+//           position: absolute;
+//           z-index: -1;
+//           height: auto;
+//           opacity: 0;
+//           transition: .5s ease-in;
+//         }
+    
+//         &:nth-child(2) .trazo { top:  0px; left : -15px; width: 205px; transform: rotate(-5deg) }
+//         &:nth-child(3) .trazo { top: -5px; right: -15px; width: 150px; transform: rotate( 6deg) }
+//         &:nth-child(4) .trazo { top: 10px; left:  -50px; width: 195px; transform: rotate( 3deg) }
+    
+//         &:hover  .trazo,
+//         &.active .trazo { opacity: 1 }
+    
+//         &:last-child {
+//           margin: 0;
+//         }
+//       }
+//     }
+
+//     .cerrar {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       font-size: 30px;
+//       font-weight: bold;
+//       position: absolute;
+//       top: 0;
+//       left: 5px;
+//       width: 20px;
+//       height: 100%;
+//       transition: .5s;
+//       cursor: pointer;
+//     }
+//   }
+// }
 
 // ───────────────── //
 //     PROYECTOS     //
@@ -195,6 +279,7 @@ p {
     width: 100%;
     break-inside: avoid;
     overflow: hidden;
+    transition: .5s;
     cursor: pointer;
 
     img {
@@ -493,25 +578,24 @@ footer p {
   text-decoration: none !important;
   white-space: nowrap;
   background: $blanco;
-  border: 1px solid rgba(25,25,25,.25);
+  border: 1px solid black;
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  right: 75px;
   z-index: 150;
   width: 50px;
   height: 50px;
   opacity: 0;
   overflow: hidden;
-  transition: 0.3s ease-in-out;
+  transition: 0.25s;
 
   .flecha {
     font-size: 18px;
-    transition: 0.3s ease-in-out;
   }
 
   &:visited {
     color: $texto !important;
-    border-color: rgba(25,25,25,.25);
+    border-color: black;
   }
 
   &:hover {

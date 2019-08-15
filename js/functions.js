@@ -56,6 +56,38 @@ $(window).on("load", function() {
         $("#navbar .contenido").css("left", "-300px");
     });
 
+    // ────────────── //
+    //     FILTRO     //
+    // ────────────── //
+
+    // Actualizar filtro
+    $(document).on("click", ".topbar .item", function() {
+        
+        var opcionSeleccionada = $(this).text();
+
+        // Resaltamos la opción seleccionada
+        $(".topbar .item.active").removeClass("active");
+        $(this).addClass("active");
+
+        if (opcionSeleccionada == "Todo") {
+            $("#proyectos .proyecto").css({"display": "block"});
+            return;
+        }
+
+        $("#proyectos .proyecto").each(function() {
+            
+            var categoria = $(this).find(".categoria").text();
+            
+            // Mostramos los proyectos cuya categoría coincida con la opción seleccionada
+            if (~categoria.indexOf(opcionSeleccionada))
+                $(this).css("display", "block");
+
+            // Ocultamos los proyectos cuya categoría no coincida con la opción seleccionada
+            else
+                $(this).css("display", "none");
+        });
+    });
+
     // ───────────────── //
     //     PROYECTOS     //
     // ───────────────── //
