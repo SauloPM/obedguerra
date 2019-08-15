@@ -48,19 +48,11 @@ $(window).on("load", function() {
     //     NAVBAR     //
     // ────────────── //
 
-    fixNavbar();
-
-    $(document).scroll(function() {
-        fixNavbar();
+    $(document).on("click", "#navbar .abrir", function() {
+        $("#navbar .contenido").css("left", "0");
     });
 
-    // Stycky Navigation Bar
-    function fixNavbar() {
-        if ($(document).scrollTop() > 0) {
-            $("nav").css("box-shadow", "0 0 5px black");
-        }
-        else {
-            $("nav").css("box-shadow", "");
-        }
-    }
+    $(document).on("click", "#navbar .cerrar", function() {
+        $("#navbar .contenido").css("left", "-300px");
+    });
 });
