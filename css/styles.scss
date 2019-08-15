@@ -59,7 +59,7 @@ p {
 // Utils
 
 .wrapper {
-  padding: 50px 0 0 50px;
+  padding: 0 0 0 50px;
 }
 
 .overlay {
@@ -72,12 +72,18 @@ p {
   transition: .5s ease-out;
 }
 
+@media only screen and (min-width: $tablet) {
+  .wrapper {
+    padding: 50px 0 0 50px;
+  }
+}
+
 // ────────────── //
 //     TOPBAR     //
 // ────────────── //
 
-.filtro {
-  display: flex;
+#filtro {
+  display: none;
   align-items: center;
   justify-content: center;
   background: white;
@@ -101,7 +107,7 @@ p {
     text-decoration: none;
     letter-spacing: 5px;
     white-space: nowrap;
-    padding: 0 25px;
+    padding: 0 22px;
     position: relative;
     height: 100%;
     transition: .25s;
@@ -135,6 +141,14 @@ p {
         display: none;
       }
     }
+  }
+}
+
+// Mobile First
+
+@media only screen and (min-width: $tablet) {
+  #filtro {
+    display: flex;
   }
 }
 
@@ -172,6 +186,49 @@ p {
 // ────────────── //
 //     NAVBAR     //
 // ────────────── //
+
+#burger-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 175;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  .barras {
+    position: relative;
+    width: 22px;
+    height: 17px;
+
+    .barra {
+      display: block;
+      background: black;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      transition: .5s;
+  
+      &:nth-child(1) {
+        top: 0;
+      }
+      &:nth-child(2) {
+        top: 8px;
+      }
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+  }
+
+  &:hover .barras .barra {
+    background: $primary;
+  }
+}
 
 // #navbar {
 //   padding: 0;

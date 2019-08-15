@@ -56,17 +56,56 @@ $(window).on("load", function() {
         $("#navbar .contenido").css("left", "-300px");
     });
 
+    // ───────────────────── //
+    //     BURGER BUTTON     //
+    // ───────────────────── //
+
+    $(document).on("click", "#burger-button.closed", function() {
+
+        $(this).removeClass("closed").addClass("opened");
+
+        $("#burger-button .barra:nth-child(2)").css("transform", "scaleX(0)");
+
+        setTimeout(() => {
+            $("#burger-button .barra:nth-child(1)").css({"top": "8px", "opacity": "0"});
+            $("#burger-button .barra:nth-child(3)").css({"top": "8px", "opacity": "0"});
+
+            setTimeout(() => {
+                $("#burger-button .barra:nth-child(1)").css({"transform": "rotate(45deg)", "opacity": "1"});
+                $("#burger-button .barra:nth-child(3)").css({"transform": "rotate(-45deg)", "opacity": "1"});
+            }, 500);
+        }, 500);
+    });
+
+    $(document).on("click", "#burger-button.opened", function() {
+
+        $(this).removeClass("opened").addClass("closed");
+
+        $("#burger-button .barra:nth-child(1)").css({"transform": "rotate(0)", "opacity": "0"});
+        $("#burger-button .barra:nth-child(3)").css({"transform": "rotate(0)", "opacity": "0"});
+
+        setTimeout(() => {
+            $("#burger-button .barra:nth-child(1)").css({"top": "", "opacity": "1"});
+            $("#burger-button .barra:nth-child(3)").css({"top": "", "opacity": "1"});
+
+            setTimeout(() => {
+                $("#burger-button .barra:nth-child(2)").css("transform", "scaleX(1)");
+            }, 500);
+        }, 500);
+
+    });
+
     // ────────────── //
     //     FILTRO     //
     // ────────────── //
 
     // Actualizar filtro
-    $(document).on("click", ".filtro .opcion", function() {
+    $(document).on("click", "#filtro .opcion", function() {
         
         var opcionSeleccionada = $(this).text();
 
         // Resaltamos la opción seleccionada
-        $(".filtro .opcion.active").removeClass("active");
+        $("#filtro .opcion.active").removeClass("active");
         $(this).addClass("active");
 
         if (opcionSeleccionada == "Todo") {
