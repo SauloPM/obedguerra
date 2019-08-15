@@ -4,8 +4,11 @@ $blanco : rgb(255,255,255);
 $primary: rgb(230,025,065);
 
 // Responsive
-$mobile: 480px;
-$tablet: 768px;
+$mobile      :  480px;
+$tablet      :  768px;
+$laptop      :  980px;
+$desktop     : 1200px;
+$largedesktop: 1800px;
 
 // Text selection
 ::-moz-selection { color: $blanco; background: $primary }
@@ -206,16 +209,16 @@ p {
       justify-content: center;
       flex-direction: column;
       background: rgba(255,255,255,.9);
-      padding: 0 100px;
+      padding: 0 10%;
 
       .titulo {
         color: $texto;
-        font-size: 25px;
+        font-size: 15px;
         font-weight: 200;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 5px;
-        line-height: 35px;
+        line-height: 30px;
         padding-top: 150px;
         margin-bottom: 15px;
         // margin-bottom: 5px;
@@ -260,23 +263,64 @@ p {
   }
 }
 
+// Mobile First
+
 @media (min-width: $mobile) {
   #proyectos {
-    columns: 2;
-    column-gap: 5px;
 
     .proyecto {
-      margin: 0 0 5px;
+      // margin: 0 0 5px;
+
+      .overlay .titulo {
+        font-size: 25px;
+        line-height: 35px;
+      }
     }
   }
 }
 
 @media (min-width: $tablet) {
   #proyectos {
-    columns: 4;
+    columns: 2;
+    // column-gap: 5px;
 
     .proyecto {
-      border: 1px solid rgba(0,0,0,.1);
+      // border: 1px solid rgba(0,0,0,.1);
+
+      .overlay .titulo {
+        font-size: 18px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: $laptop) {
+  #proyectos {
+    columns: 3;
+  }
+}
+
+@media (min-width: $desktop) {
+  #proyectos {
+    columns: 4;
+
+    .proyecto .overlay {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: $largedesktop) {
+  #proyectos .proyecto {
+
+    .overlay {
+      padding: 0 20%;
+
+      .titulo {
+        font-size: 25px;
+        line-height: 35px;
+      }
     }
   }
 }
