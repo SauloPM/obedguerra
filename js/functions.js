@@ -61,12 +61,12 @@ $(window).on("load", function() {
     // ────────────── //
 
     // Actualizar filtro
-    $(document).on("click", ".topbar .item", function() {
+    $(document).on("click", ".filtro .opcion", function() {
         
         var opcionSeleccionada = $(this).text();
 
         // Resaltamos la opción seleccionada
-        $(".topbar .item.active").removeClass("active");
+        $(".filtro .opcion.active").removeClass("active");
         $(this).addClass("active");
 
         if (opcionSeleccionada == "Todo") {
