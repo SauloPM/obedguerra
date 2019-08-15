@@ -1,11 +1,31 @@
 // Colores
-$texto  : rgb(025,025,025);
+$texto  : rgb(060,055,080);
 $blanco : rgb(255,255,255);
 $primary: rgb(230,025,065);
 
 // Responsive
 $mobile: 480px;
 $tablet: 768px;
+
+// Text selection
+::-moz-selection { color: $blanco; background: $primary }
+::selection      { color: $blanco; background: $primary }
+
+// Scrollbar
+::-webkit-scrollbar { width: 0 }
+
+// Placeholder
+::placeholder           { color: #c8c8c8; font-weight: normal; transition: .5s }
+:-ms-input-placeholder  { color: #c8c8c8; font-weight: normal; transition: .5s }
+::-ms-input-placeholder { color: #c8c8c8; font-weight: normal; transition: .5s }
+
+:focus::placeholder           { color: transparent }
+:focus:-ms-input-placeholder  { color: transparent }
+:focus::-ms-input-placeholder { color: transparent }
+
+// ─────────────── //
+//     GENERAL     //
+// ─────────────── //
 
 * {
   box-sizing: border-box;
@@ -30,65 +50,6 @@ p {
   line-height: 25px;
   text-align: left;
   margin-bottom: 0;
-}
-
-// Text selection
-::-moz-selection { color: $blanco; background: $primary }
-::selection      { color: $blanco; background: $primary }
-
-// Scrollbar
-::-webkit-scrollbar { width: 0 }
-
-// Placeholder
-::placeholder           { color: #c8c8c8; font-weight: normal; transition: .5s }
-:-ms-input-placeholder  { color: #c8c8c8; font-weight: normal; transition: .5s }
-::-ms-input-placeholder { color: #c8c8c8; font-weight: normal; transition: .5s }
-
-:focus::placeholder           { color: transparent }
-:focus:-ms-input-placeholder  { color: transparent }
-:focus::-ms-input-placeholder { color: transparent }
-
-/*
-╔════════════════════╗
-║     TOP BUTTON     ║
-╚════════════════════╝
-*/
-
-.top-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $texto !important;
-  text-decoration: none !important;
-  white-space: nowrap;
-  background: $blanco;
-  border: 1px solid rgba(25,25,25,.25);
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 150;
-  width: 50px;
-  height: 50px;
-  opacity: 0;
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
-
-  .flecha {
-    font-size: 18px;
-    transition: 0.3s ease-in-out;
-  }
-
-  &:hover {
-    border-color: $primary;
-
-    .flecha {
-      color: $primary;
-    }
-  }
-
-  &:active .flecha {
-    color: transparent;
-  }
 }
 
 /*
@@ -443,4 +404,70 @@ footer p {
   text-transform: uppercase;
   letter-spacing: 5px;
   transform: rotateX(25deg);
+}
+
+// ───────────────── //
+//     PRELOADER     //
+// ───────────────── //
+
+#preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background-color: white;
+
+  .logo {
+    width: 250px;
+    height: auto;
+  }
+}
+
+// ────────────────── //
+//     TOP BUTTON     //
+// ────────────────── //
+
+.top-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $texto !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+  background: $blanco;
+  border: 1px solid rgba(25,25,25,.25);
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 150;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+
+  .flecha {
+    font-size: 18px;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:visited {
+    color: $texto !important;
+    border-color: rgba(25,25,25,.25);
+  }
+
+  &:hover {
+    color: $primary !important;
+    border-color: $primary;
+  }
+
+  &:active {
+    color: $primary !important;
+    border-color: $primary;
+  }
 }
