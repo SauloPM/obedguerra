@@ -55,4 +55,25 @@ $(window).on("load", function() {
     $(document).on("click", "#navbar .cerrar", function() {
         $("#navbar .contenido").css("left", "-300px");
     });
+
+    // ───────────────── //
+    //     PROYECTOS     //
+    // ───────────────── //
+
+    $(document).on("mouseover", "#proyectos .proyecto", function() {
+        
+        $(this).find(".overlay .titulo").css({"padding-top": "0", "opacity": "1"});
+
+        setTimeout(() => {
+            $(this).find(".overlay .categoria").css({"top": "0", "opacity": "1"});
+        }, 50);
+        
+    });
+
+    $(document).on("mouseleave", "#proyectos .proyecto", function() {
+        
+        $(this).find(".overlay .titulo").css("padding-top", "");
+        $(this).find(".overlay .categoria").css({"top": "", "opacity": ""});
+
+    });
 });

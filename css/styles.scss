@@ -53,9 +53,21 @@ p {
   margin-bottom: 0;
 }
 
+// Utils
+
 .wrapper {
   padding-left: 20px;
   transition: .5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: .5s ease-out;
 }
 
 // ────────────── //
@@ -162,11 +174,9 @@ p {
   }
 }
 
-/*
-╔══════════════════╗
-║     PROJECTS     ║
-╚══════════════════╝
-*/
+// ───────────────── //
+//     PROYECTOS     //
+// ───────────────── //
 
 #proyectos {
   columns: 1;
@@ -184,63 +194,69 @@ p {
     overflow: hidden;
     cursor: pointer;
 
-    .overlay {
-      background: black;
-      background: linear-gradient(transparent, black);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0;
-      transition: .25s ease-in-out;
-    }
-
     img {
       vertical-align: middle;
       width: 100%;
       max-width: 100%;
     }
 
-    .titulo {
-      color: $blanco;
-      font-size: 12px;
-      position: absolute;
-      bottom: 65px;
-      left: 5px;
-      z-index: 50;
-      opacity: 0;
-      transition: opacity 1s ease-in-out, left .5s ease-in-out;
-    }
+    .overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: rgba(255,255,255,.9);
+      padding: 0 100px;
 
-    .categoria {
-      color: rgba(255,255,255,.75);
-      font-size: 18px;
-      font-weight: 200;
-      background: $primary;
-      padding: 5px 10px;
-      position: absolute;
-      bottom: 25px;
-      left: 5px;
-      z-index: 50;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out, left .75s ease-in-out;
-    }
-
-    // Hover
-    &:hover {
-      .overlay {
-        opacity: .75;
-      }
       .titulo {
-        left: 25px;
-        opacity: 1;
+        color: $texto;
+        font-size: 25px;
+        font-weight: 200;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        line-height: 35px;
+        padding-top: 150px;
+        margin-bottom: 15px;
+        // margin-bottom: 5px;
+        width: 100%;
+        opacity: 0;
+        transform: rotateX(20deg);
+        transition: opacity .5s ease-in-out, padding .5s ease-out;
       }
+  
       .categoria {
-        left: 25px;
-        opacity: 1;
+        color: rgba(255,255,255,.8);
+        font-size: 12px;
+        font-weight: 300;
+        text-align: center;
+        line-height: 20px;
+        position: relative;
+        top: 25px;
+        z-index: 50;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .5s ease-in-out, top .75s ease-in-out;
+
+        &::after {
+          content: "";
+          display: block;
+          background: url(../img/trazo1.png) no-repeat center;
+          background-size: contain;
+          position: absolute;
+          top: -12px;
+          // top: -14px;
+          left: 55%;
+          z-index: -1;
+          width: 100%;
+          height: 45px;
+          transform: translateX(-50%) rotateZ(-5deg);
+          // transform: translateX(-50%) rotateZ(-8deg);
+        }
       }
     }
+
+    &:hover .overlay { opacity: 1 }
   }
 }
 
