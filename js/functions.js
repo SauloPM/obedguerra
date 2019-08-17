@@ -66,7 +66,7 @@ $(window).on("load", function() {
         $(this).removeClass("closed");
 
         // Ocultamos la barra intermedia
-        $("#burger-button .barra:nth-child(2)").css("transform", "scaleX(0)");
+        $("#burger-button .barra:nth-child(2)").css({"ms-transform": "scaleX(0)", "-webkit-transform": "scaleX(0)", "transform": "scaleX(0)"});
 
         // Desplazamos las dos barras de los extremos al centro
         setTimeout(() => {
@@ -117,7 +117,7 @@ $(window).on("load", function() {
         }, 1250);
 
         // Mostramos la barra intermedia
-        setTimeout(() => { $("#burger-button .barra:nth-child(2)").css("transform", "scaleX(1)") }, 1500);
+        setTimeout(() => { $("#burger-button .barra:nth-child(2)").css({"ms-transform": "scaleX(1)", "-webkit-transform": "scaleX(1)", "transform": "scaleX(1)"}) }, 1500);
 
         setTimeout(() => { $(this).addClass("closed") }, 1500);
     });
@@ -154,24 +154,4 @@ $(window).on("load", function() {
         });
     });
 
-    // ───────────────── //
-    //     PROYECTOS     //
-    // ───────────────── //
-
-    $(document).on("mouseover", "#proyectos .proyecto", function() {
-        
-        $(this).find(".overlay .titulo").css({"padding-top": "0", "opacity": "1"});
-
-        setTimeout(() => {
-            $(this).find(".overlay .categoria").css({"top": "0", "opacity": "1"});
-        }, 50);
-        
-    });
-
-    $(document).on("mouseleave", "#proyectos .proyecto", function() {
-        
-        $(this).find(".overlay .titulo").css("padding-top", "");
-        $(this).find(".overlay .categoria").css({"top": "", "opacity": ""});
-
-    });
 });
