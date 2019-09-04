@@ -36,8 +36,11 @@ $largedesktop: 1800px;
 
 body {
   display: flex;
+  flex-direction: column;
   color: $texto;
   background: $blanco;
+  font-size: 15px;
+  line-height: 30px;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -60,6 +63,7 @@ p {
 
 .wrapper {
   padding: 0 0 0 50px;
+  width: 100%;
 }
 
 .overlay {
@@ -70,6 +74,57 @@ p {
   bottom: 0;
   opacity: 0;
   transition: .5s ease-out;
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $texto;
+  border: 1px solid rgba(0,0,0,.1);
+  text-decoration: none;
+  width: 100%;
+  height: 50px;
+  transition: .25s ease-in;
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+.botonn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 300;
+  text-decoration: none;
+  margin: 0 auto;
+  position: relative;
+  height: 75px;
+
+  &::after {
+    content: "";
+    display: block;
+    background: url(../img/trazo3.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 75px;
+    transform: translateX(-50%);
+    transition: .25s ease-in;
+  }
+
+  &:hover {
+
+    &::after {
+      -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+    }
+  }
 }
 
 @media only screen and (min-width: $tablet) {
@@ -467,56 +522,91 @@ p {
 // ───────────── //
 
 #about {
-  display: flex;
-  justify-content: space-between;
-  margin: 100px auto 0;
-  width: 100%;
-  max-width: 1500px;
+  text-align: center;
+  padding: 0 25px;
 
-  .columna:nth-child(1) {
+  .selfie {
+    display: inline-block;
+    padding: 50px 0 0;
+    margin-bottom: 25px;
     position: relative;
 
-    .selfie {
-      width: 480px;
+    .foto {
+      width: 100%;
+      max-width: 480px;
       height: auto;
     }
 
     .trazo {
-      position: absolute;
-      top: 75px;
-      left: -235px;
-      z-index: -1;
-      width: 1000px;
-      height: auto;
-      transform: rotate(-22deg);
-
-      position: absolute;
-      top: 32px;
-      left: -350px;
-      z-index: -1;
-      width: 1065px;
-      height: auto;
-      transform: rotate(164deg);
+      display: none;
     }
   }
 
-  .columna:nth-child(2) {
-
-    h2 {
-      font-size: 200px;
-      font-weight: 900;
-      text-align: right;
-      letter-spacing: -10px;
-      line-height: 175px;
-      margin-top: 45px;
-      margin-bottom: 75px;
-    }
+  .texto {
+    margin: 0 auto 25px;
+    width: 100%;
+    max-width: 700px;
 
     p {
-      color: rgba(25,25,25,.75);
-      font-size: 25px;
       text-align: right;
-      line-height: 40px;
+      margin: 0;
+    }
+  }
+
+  .boton {
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}
+
+// Mobile First
+
+@media only screen and (min-width: $mobile) {
+  
+  #about {
+
+    .texto {
+      margin: 0 auto 75px;
+      -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+      column-gap: 10px;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $tablet) {
+  
+  #about {
+    padding: 0;
+
+    .selfie {
+      padding: 0;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  
+  #about {
+
+    .selfie {
+
+      .trazo {
+        display: block;
+        position: absolute;
+        top: 32px;
+        left: -350px;
+        z-index: -1;
+        width: 1065px;
+        height: auto;
+        transform: rotate(164deg);
+      }
     }
   }
 }
@@ -598,17 +688,38 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 500;
-  background-color: white;
+
+  -webkit-animation: cambiar-fondo 5s infinite ease-in-out alternate;
+          animation: cambiar-fondo 5s infinite ease-in-out alternate;
 
   .logo {
     width: 250px;
     height: auto;
+  }
+}
+
+@-webkit-keyframes cambiar-fondo {
+  0% {
+      background: white;
+  }
+  50% {
+      background: $primary;
+  }
+}
+
+@keyframes cambiar-fondo {
+  0% {
+      background: white;
+  }
+  50% {
+      background: $primary;
   }
 }
 
