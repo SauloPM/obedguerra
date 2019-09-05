@@ -4,13 +4,19 @@
 <head>
 
     <meta charset="utf-8">
+
     <meta name="viewport"    content="width=device-width, initial-scale=1">
     <meta name="author"      content="Saulo Poveda Montesdeoca">
     <meta name="description" content="Obed Guerra Design">
 
-    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+    <meta charset="utf-8">
+    <meta name="viewport"    content="width=device-width, initial-scale=1">
+    <meta name="author"      content="Saulo Poveda Montesdeoca">
+    <meta name="description" content="Página web oficial de Obed Guerra, comunicador visual con un amplio abanico de habilidades y conocimientos en diferentes campos, tanto dentro y fuera del diseño gráfico">
 
-    <title>Obed Guerra</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <title>Obed Guerra Design</title>
 
     <!-- ─────────── -->
     <!--     CSS     -->
@@ -39,16 +45,10 @@
 
 <body id="top">
 
-    <!-- Preloader -->
     <div id="preloader">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+        <img class="logo" src="img/logo.png" alt="Logo de Obed Guerra Design" title="Logo de Obed Guerra Design">
     </div>
 
-    <!-- Top Button -->
     <a class="top-button smooth-scrolling" href="#top">
         <i class="flecha fa fa-angle-up" aria-hidden="true"></i>
     </a>
@@ -57,70 +57,76 @@
     <!--     NAVBAR     -->
     <!-- ────────────── -->
 
-    <nav>
-        <div class="wrapper">
-            <div class="brand">
-                <img src="img/logo.png" alt="">
-                <h1>Obed Guerra</h1>
-            </div>
-            <div class="items">
-                <a class="item" href="index.html">
-                    Proyectos
-                    <img class="trazo" src="img/trazo1.png" alt="">
-                </a>
-                <a class="item active" href="about.html">
-                    Conóceme
-                    <img class="trazo" src="img/trazo2.png" alt="">
-                </a>
-                <a class="item" href="contact.html">
-                    Contacto
-                    <img class="trazo" src="img/trazo3.png" alt="">
-                </a>
-            </div>
+    <div id="burger-button" class="closed">
+        <div class="barras">
+            <span class="barra"></span>
+            <span class="barra"></span>
+            <span class="barra"></span>
         </div>
-    </nav>
+    </div>
 
-    <!-- ───────────── -->
-    <!--     ABOUT     -->
-    <!-- ───────────── -->
+    <section id="navbar">
+        <a class="item" href="index.html">
+            Proyectos
+            <img class="trazo" src="img/trazo1.png" alt="">
+        </a>
+        <a class="item active" href="about.html">
+            Conóceme
+            <img class="trazo" src="img/trazo2.png" alt="">
+        </a>
+        <a class="item" href="#">
+            Contacto
+            <img class="trazo" src="img/trazo3.png" alt="">
+        </a>
+    </section>
 
-    <section id="about">
-        <div class="columna">
-            <img class="selfie" src="img/selfie.png" alt="">
-            <img class="trazo"  src="img/trazo-grande.png"      alt="">
-        </div>
-        <div class="columna">
-            <h2>Obed Guerra</h2>
-            <p>
-                Comunicador visual con un amplio abanico de habilidades y conocimientos en diferentes campos, tanto dentro y fuera del diseño gráfico. Destaco por mi capacidad de formular ideas diversas y creativas. Interesado en el arte, la estética, la filosofía y la literatura. Estas inquietudes me han permitido adquirir un amplio bagaje cultural que me permite adaptarme a todo tipo de proyecto.
-            </p>
-            <a href="pdf/cv.pdf" target="_blank">Descargar PDF</a>
+    <!-- ─────────────── -->
+    <!--     SIDEBAR     -->
+    <!-- ─────────────── -->
+
+    <section class="sidebar left">
+        <h1 class="titulo">
+            Obed Guerra <span>Design</span>
         </div>
     </section>
 
-    <!-- ────────────── -->
-    <!--     SOCIAL     -->
-    <!-- ────────────── -->
+    <div class="wrapper">
 
-    <section id="redes-sociales">
-        <div class="red-social wow fadeIn">
-            <i class="icon fa fa-linkedin" aria-hidden="true"></i>
-        </div>
-        <div class="red-social wow fadeIn" data-wow-delay=".15s">
-            <i class="icon fa fa-instagram" aria-hidden="true"></i>
-        </div>
-        <div class="red-social wow fadeIn" data-wow-delay=".3s">
-            <i class="icon fa fa-behance" aria-hidden="true"></i>
-        </div>
-    </section>
+        <!-- ───────────── -->
+        <!--     ABOUT     -->
+        <!-- ───────────── -->
 
-    <!-- ────────────── -->
-    <!--     FOOTER     -->
-    <!-- ────────────── -->
+        <section id="about">
+                <div class="selfie">
+                    <img class="foto" src="img/selfie.png" alt="">
+                    <img class="trazo" src="img/trazo-grande.png" alt="">
+                </div>
+                <div class="texto">
+                    <p>
+                        Comunicador visual con un amplio abanico de habilidades y conocimientos en diferentes campos, tanto dentro y fuera del diseño gráfico. Destaco por mi capacidad de formular ideas diversas y creativas. Interesado en el arte, la estética, la filosofía y la literatura. Estas inquietudes me han permitido adquirir un amplio bagaje cultural que me brinda la posibilidad de adaptarme a todo tipo de proyecto.
+                    </p>
+                </div>
+                <a class="boton" href="pdf/cv.pdf" target="_blank">Descargar PDF</a>
+            </div>
+        </section>
 
-    <footer>
-        <p>Obed Guerra</p>
-    </footer>
+        <!-- ────────────── -->
+        <!--     SOCIAL     -->
+        <!-- ────────────── -->
+
+        <section id="redes-sociales">
+            <a class="red-social wow fadeIn" href="https://www.linkedin.com/in/obed-guerra/" target="_blank" title="Perfil de LinkedIn de Obed Guerra">
+                <i class="icon fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="red-social wow fadeIn" href="#" target="_blank" title="Perfil de Instagram de Obed Guerra" data-wow-delay=".15s">
+                <i class="icon fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a class="red-social wow fadeIn" href="https://www.behance.net/obedguerra" target="_blank" title="Perfil de Behance de Obed Guerra" data-wow-delay=".3s">
+                <i class="icon fa fa-behance" aria-hidden="true"></i>
+            </a>
+        </section>
+
+    </div>
 
     <!-- ────────── -->
     <!--     JS     -->
@@ -128,6 +134,9 @@
 
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+    <!-- jQuery Easing CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
     <!-- WOW -->
     <script src="js/wow.min.js"></script>
