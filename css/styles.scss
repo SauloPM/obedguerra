@@ -543,13 +543,39 @@ p {
   }
 
   .texto {
-    margin: 0 auto 25px;
+    margin: 0 auto;
     width: 100%;
     max-width: 700px;
 
     p {
       text-align: right;
       margin: 0;
+    }
+  }
+
+  .skills {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 40px auto;
+
+    .skill {
+      flex: 0 1 100%;
+      margin: 5px 0;
+      
+      .titulo {
+        display: block;
+        text-align: right;
+      }
+  
+      .barra {
+        display: block;
+        margin-left: auto;
+        width: 100px;
+        height: auto;
+        transform: rotateY(180deg);
+      }
     }
   }
 
@@ -566,7 +592,6 @@ p {
   #about {
 
     .texto {
-      margin: 0 auto 75px;
       -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;
@@ -574,6 +599,25 @@ p {
 
       p {
         text-align: left;
+      }
+    }
+
+    .skills {
+      justify-content: center;
+      margin: 55px auto;
+
+      .skill {
+        flex: 0 1 auto;
+        margin: 5px 25px;
+
+        .titulo {
+          text-align: center;
+        }
+
+        .barra {
+          margin: 0 auto;
+          transform: rotateY(0);
+        }
       }
     }
   }
