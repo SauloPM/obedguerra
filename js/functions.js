@@ -60,7 +60,7 @@ $(window).on("load", function() {
 
     function abrirMenu() {
 
-        $(this).removeClass("closed");
+        $("#burger-button").removeClass("closed");
 
         // Ocultamos la barra intermedia
         $("#burger-button .barra:nth-child(2)").css({"ms-transform": "scaleX(0)", "-webkit-transform": "scaleX(0)", "transform": "scaleX(0)"});
@@ -85,12 +85,12 @@ $(window).on("load", function() {
         setTimeout(() => { $("#navbar .item:nth-child(2)").css("opacity", "1") }, 1250);
         setTimeout(() => { $("#navbar .item:nth-child(3)").css("opacity", "1") }, 1500);
 
-        setTimeout(() => { $(this).addClass("opened") }, 1500);
+        setTimeout(() => { $("#burger-button").addClass("opened") }, 1500);
     }
 
     function cerrarMenu() {
 
-        $(this).removeClass("opened");
+        $("#burger-button").removeClass("opened");
 
         // Ocultamos los ítems del navbar
         $("#navbar .item:nth-child(1)").css("opacity", "");
@@ -115,7 +115,7 @@ $(window).on("load", function() {
         // Mostramos la barra intermedia
         setTimeout(() => { $("#burger-button .barra:nth-child(2)").css({"ms-transform": "scaleX(1)", "-webkit-transform": "scaleX(1)", "transform": "scaleX(1)"}) }, 1500);
 
-        setTimeout(() => { $(this).addClass("closed") }, 1500);
+        setTimeout(() => { $("#burger-button").addClass("closed") }, 1500);
     }
 
     // ────────────── //
