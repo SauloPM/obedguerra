@@ -127,6 +127,11 @@ $(window).on("load", function() {
         
         e.preventDefault();
         
+        if ( $(this).hasClass("active") ) {
+            cerrarMenu();
+            return;
+        }
+
         var target = $(this).attr("href");
         
         cerrarMenu();
