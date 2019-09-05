@@ -50,6 +50,15 @@ $(window).on("load", function() {
 
     // Abrir
     $(document).on("click", "#burger-button.closed", function() {
+        abrirMenu();
+    });
+
+    // Cerrar
+    $(document).on("click", "#burger-button.opened", function() {
+        cerrarMenu();
+    });
+
+    function abrirMenu() {
 
         $(this).removeClass("closed");
 
@@ -77,10 +86,9 @@ $(window).on("load", function() {
         setTimeout(() => { $("#navbar .item:nth-child(3)").css("opacity", "1") }, 1500);
 
         setTimeout(() => { $(this).addClass("opened") }, 1500);
-    });
+    }
 
-    // Cerrar
-    $(document).on("click", "#burger-button.opened", function() {
+    function cerrarMenu() {
 
         $(this).removeClass("opened");
 
@@ -108,6 +116,26 @@ $(window).on("load", function() {
         setTimeout(() => { $("#burger-button .barra:nth-child(2)").css({"ms-transform": "scaleX(1)", "-webkit-transform": "scaleX(1)", "transform": "scaleX(1)"}) }, 1500);
 
         setTimeout(() => { $(this).addClass("closed") }, 1500);
+    }
+
+    // ────────────── //
+    //     NAVBAR     //
+    // ────────────── //
+
+    // Navegación suavizada
+    $(document).on("click", "#navbar .item", function(e) {
+        
+        e.preventDefault();
+        
+        var target = $(this).attr("href");
+        
+        cerrarMenu();
+
+        setTimeout(() => {
+            $("#preloader").fadeIn(500, function() {
+                window.location.replace(target);
+            });
+        }, 1500);
     });
 
     // ────────────── //
