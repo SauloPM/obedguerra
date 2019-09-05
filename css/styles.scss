@@ -696,30 +696,9 @@ footer p {
   bottom: 0;
   z-index: 500;
 
-  -webkit-animation: cambiar-fondo 5s infinite ease-in-out alternate;
-          animation: cambiar-fondo 5s infinite ease-in-out alternate;
-
   .logo {
     width: 250px;
     height: auto;
-  }
-}
-
-@-webkit-keyframes cambiar-fondo {
-  0% {
-      background: white;
-  }
-  50% {
-      background: $primary;
-  }
-}
-
-@keyframes cambiar-fondo {
-  0% {
-      background: white;
-  }
-  50% {
-      background: $primary;
   }
 }
 
