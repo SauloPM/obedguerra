@@ -555,35 +555,42 @@ p {
     }
   }
 
-  .skills {
+  .conocimientos {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin: 40px auto;
+    margin: 55px auto;
+    width: 100%;
+    max-width: $tablet;
 
-    .skill {
-      flex: 0 1 100%;
-      margin: 5px 0;
-      
-      .titulo {
-        display: block;
-        text-align: right;
-      }
-  
-      .barra {
-        display: block;
-        margin-left: auto;
+    .fila {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .conocimiento {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin: 10px 0 10px 100px;
+        position: relative;
         width: 100px;
-        height: auto;
-        transform: rotateY(180deg);
+        height: 100px;
+  
+        .titulo {
+          font-size: 10px;
+        }
+  
+        .grafico {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
       }
     }
-  }
-
-  .boton {
-    margin: 0 auto;
-    max-width: 700px;
   }
 }
 
@@ -604,22 +611,12 @@ p {
       }
     }
 
-    .skills {
+    .conocimientos .fila {
       justify-content: center;
-      margin: 55px auto;
+      flex-wrap: nowrap;
 
-      .skill {
-        flex: 0 1 auto;
-        margin: 5px 25px;
-
-        .titulo {
-          text-align: center;
-        }
-
-        .barra {
-          margin: 0 auto;
-          transform: rotateY(0);
-        }
+      .conocimiento {
+        margin: 10px;
       }
     }
   }
@@ -634,26 +631,33 @@ p {
       padding: 0;
       margin-bottom: 50px;
     }
+
+    .conocimientos {
+      flex-wrap: nowrap;
+      padding: 0;
+
+      .fila {
+        justify-content: flex-start;
+
+        .conocimiento {
+          margin: auto;
+        }
+      }
+    }
   }
 }
 
 @media only screen and (min-width: $desktop) {
   
-  #about {
-
-    .selfie {
-
-      .trazo {
-        display: block;
-        position: absolute;
-        top: 32px;
-        left: -350px;
-        z-index: -1;
-        width: 1065px;
-        height: auto;
-        transform: rotate(164deg);
-      }
-    }
+  #about .selfie .trazo {
+    display: block;
+    position: absolute;
+    top: 32px;
+    left: -350px;
+    z-index: -1;
+    width: 1065px;
+    height: auto;
+    transform: rotate(164deg);
   }
 }
 
@@ -718,8 +722,12 @@ p {
 }
 
 // ────────────── //
-//     SOCIAL     //
+//     FOOTER     //
 // ────────────── //
+
+footer {
+  background: $primary;
+}
 
 #redes-sociales {
   display: flex;
