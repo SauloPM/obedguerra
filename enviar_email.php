@@ -3,6 +3,7 @@
 // Almacenamos los datos del formulario en variables
 $to      = "info@saulopm.com";
 $from    = $_POST['email'  ];
+$name    = $_POST['nombre' ];
 $subject = $_POST['asunto' ];
 $message = $_POST['mensaje'];
 
@@ -12,6 +13,10 @@ $message = "
 		<title>Obed Guerra Design</title>
 	</head>
 	<body>
+		<header>
+			<p>Mensaje enviado por " . $name . "</p>
+		</header>
+		<hr>
 		<p>" . $message . "</p>
 		<hr>
 		<footer>
