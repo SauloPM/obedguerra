@@ -18,9 +18,9 @@ $largedesktop: 1800px;
 ::-webkit-scrollbar { width: 0 }
 
 // Placeholder
-::placeholder           { color: rgba(255,255,255,.8); font-weight: normal; transition: .5s }
-:-ms-input-placeholder  { color: rgba(255,255,255,.8); font-weight: normal; transition: .5s }
-::-ms-input-placeholder { color: rgba(255,255,255,.8); font-weight: normal; transition: .5s }
+::placeholder           { color: $texto; font-weight: normal; transition: .5s }
+:-ms-input-placeholder  { color: $texto; font-weight: normal; transition: .5s }
+::-ms-input-placeholder { color: $texto; font-weight: normal; transition: .5s }
 
 :focus::placeholder           { color: transparent }
 :focus:-ms-input-placeholder  { color: transparent }
@@ -81,51 +81,25 @@ p {
   align-items: center;
   justify-content: center;
   color: $texto;
-  background: none;
-  border: 1px solid rgba(0,0,0,.1);
+  font-size: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
   text-decoration: none;
-  width: 100%;
+  background: none;
+  border: 1px solid $texto;
+  letter-spacing: 5px;
+  padding: 10px 25px;
   height: 50px;
   transition: .25s ease-in;
   cursor: pointer;
 
-  &:hover {
-    border-color: $primary;
-  }
-}
-
-.botonn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 300;
-  text-decoration: none;
-  margin: 0 auto;
-  position: relative;
-  height: 75px;
-
-  &::after {
-    content: "";
-    display: block;
-    background: url(../img/trazo3.png) no-repeat center;
-    background-size: contain;
-    position: absolute;
-    top: 3px;
-    left: 50%;
-    z-index: -1;
-    width: 100%;
-    height: 75px;
-    transform: translateX(-50%);
-    transition: .25s ease-in;
+  .rosa {
+    color: $primary;
   }
 
   &:hover {
-
-    &::after {
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
-    }
+    color: $blanco;
+    background: $texto;
   }
 }
 
@@ -143,7 +117,7 @@ p {
   display: none;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: $blanco;
   padding: 0;
   position: fixed;
   top: 0;
@@ -163,7 +137,7 @@ p {
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 5px;
-    white-space: nowrap;
+    $blanco-space: nowrap;
     padding: 0 22px;
     position: relative;
     height: 100%;
@@ -217,7 +191,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: $blanco;
   padding: 0;
   position: fixed;
   top: 0;
@@ -292,7 +266,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: white;
+  background: $blanco;
   position: fixed;
   top: 0;
   left: 0;
@@ -686,57 +660,113 @@ p {
 //     CONTACTO     //
 // ──────────────── //
 
+.cabecera {
+  color: rgba(255,255,255,.8);
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 20px;
+  margin: 50px 0 0;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url(../img/trazo1.png) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 50px;
+    transform: translateX(-50%) rotateZ(-5deg);
+  }
+}
+
 #contacto {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 50px 0 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 750px;
-
+  
   .formulario {
+    padding: 25px 50px;
+    max-width: 750px;
 
     .entrada {
-      margin-bottom: 50px;
+      resize: none;
+      background: none;
+      border: none;
+      border: 1px solid $texto;
+      outline: none;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      width: 100%;
+
+      &:nth-child(4) {
+        height: 200px;
+      }
+    }
+
+    .boton {
+      width: 100%;
+      
+      &:hover {
+        color: $blanco;
+        background: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+
+  .datos-contacto {
+    color: $texto;
+    font-size: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding: 25px 50px;
+  }
+}
+
+// Mobile First
+
+@media only screen and (min-width: $mobile) {
+
+  #contacto {
+    flex-direction: row;
+
+    .formulario {
+      border-right: 1px solid $texto;
+      margin-right: 50px;
+    }
+
+    .datos-contacto {
+      padding: 0;
       position: relative;
-
-      input,
-      textarea {
-        resize: none;
-        background: none;
-        border: none;
-        border-bottom: 1px solid $texto;
-        outline: none;
-        padding: 15px 30px;
-        width: 100%;
-      }
-
-      .trazo {
+      width: 35px;
+      height: 10px;
+      
+      .dato-contacto {
         position: absolute;
-        z-index: -1;
-        height: auto;
+        transform: rotateZ(90deg);
+        
+        &.email {
+          top: 140px;
+          left: -130px;
 
-        &.tipo-1 {
-          top: -5px;
-          left: -35px;
-          width: 275px;
-          transform: rotate(-10deg);
+          .dominio {
+            display: inline;
+          }
         }
-
-        &.tipo-2 {
-          top: 0;
-          right: -60px;
-          width: 200px;
-          transform: rotateY(180deg);
+  
+        &.telefono {
+          top: 57px;
+          left: -18px;
         }
-
-        &.tipo-3 {
-          top: 0;
-          left: -50px;
-          width: 250px;
-          transform: rotate(5deg);
-        }
-      }
-
-      &:nth-child(2) input {
-        text-align: right;
       }
     }
   }
@@ -751,33 +781,12 @@ footer {
   margin: 150px 50px 0;
   padding: 100px 0;
 
-  // Descargar currículo
+  // Currículo
 
   .curriculo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $texto;
-    font-size: 8px;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 5px;
-    border: 1px solid $texto;
-    padding: 10px 25px;
     margin: 0 auto 50px;
     width: 200px;
     max-width: 500px;
-    transition: .25s ease-in;
-
-    .rosa {
-      color: $primary;
-    }
-
-    &:hover {
-      color: white;
-      background: $texto;
-    }
   }
 
   // Redes sociales
@@ -805,7 +814,7 @@ footer {
       text-decoration: none;
       border-bottom: 1px solid $texto;
       padding: 0 20px 5px;
-      margin: 5px 0;
+      margin: 5px 0 0;
       margin-right: 5px;
       width: 125px;
       transition: .25s ease-in;
@@ -867,7 +876,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: $blanco;
   position: fixed;
   top: 0;
   left: 0;
@@ -891,7 +900,7 @@ footer {
   justify-content: center;
   color: $texto !important;
   text-decoration: none !important;
-  white-space: nowrap;
+  $blanco-space: nowrap;
   background: $blanco;
   border: 1px solid $texto;
   position: fixed;
