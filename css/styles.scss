@@ -527,6 +527,8 @@ p {
   text-align: center;
   padding: 0 25px;
 
+  // Selfie
+
   .selfie {
     display: inline-block;
     padding: 50px 0 0;
@@ -555,11 +557,13 @@ p {
     }
   }
 
+  // Conocimientos
+
   .conocimientos {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 55px auto;
+    margin: 40px auto;
     width: 100%;
     max-width: $tablet;
 
@@ -592,6 +596,15 @@ p {
       }
     }
   }
+
+  // Nociones
+
+  .nociones {
+    text-align: right;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+  }
 }
 
 // Mobile First
@@ -611,13 +624,21 @@ p {
       }
     }
 
-    .conocimientos .fila {
-      justify-content: center;
-      flex-wrap: nowrap;
+    .conocimientos {
+      margin: 60px auto;
 
-      .conocimiento {
-        margin: 10px;
+      .fila {
+        justify-content: center;
+        flex-wrap: nowrap;
+  
+        .conocimiento {
+          margin: 10px;
+        }
       }
+    }
+
+    .nociones {
+      text-align: center;
     }
   }
 }
