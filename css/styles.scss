@@ -737,7 +737,7 @@ p {
 
   #contacto {
     flex-direction: row;
-    padding: 50px 50px 0 0;
+    padding: 50px 100px 0 0;
 
     .formulario {
       border-right: 1px solid $texto;
@@ -748,7 +748,7 @@ p {
     .datos-contacto {
       padding: 0;
       position: relative;
-      width: 35px;
+      width: 50px;
       height: 10px;
       
       .dato-contacto {
@@ -779,7 +779,7 @@ p {
 
 footer {
   border-top: 1px solid $texto;
-  margin: 150px 50px 0 0;
+  margin: 150px 50px 0;
   padding: 100px 0;
 
   // Currículo
